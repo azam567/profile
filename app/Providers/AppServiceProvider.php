@@ -21,4 +21,5 @@ class AppServiceProvider extends ServiceProvider
     {
         // No mailbox anymore — keep this empty for now
     }
+    
 }

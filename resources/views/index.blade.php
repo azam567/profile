@@ -3,12 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>M.Azam | Web Developer</title>
+  <title>Developed By Azam</title>
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{{ asset('favicon.png') }}">
+<link rel="shortcut icon" type="image/png" href="{{ asset('favicon.png') }}">
 
+</head>
   <style>
   * {
     margin: 0;
@@ -74,6 +77,27 @@
     padding: 12px 30px;
     border-radius: 30px;
   }
+  .hero-logo {
+    position: absolute;
+    top: 20px;       /* distance from top */
+    left: 50px;      /* distance from left */
+    width: 150px;    /* bigger width */
+    height: 100px;   /* bigger height */
+    z-index: 10;     /* make sure it's on top of video */
+    border-radius: 12px; /* optional for rounded corners */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4); /* optional shadow */
+}
+
+/* Responsive adjustment for smaller screens */
+@media (max-width: 768px) {
+    .hero-logo {
+        width: 70px;
+        height: 70px;
+        top: 15px;
+        left: 15px;
+    }
+}
+
   @media (max-width: 768px) {
     .hero-img { width: 130px; height: 130px; }
     .hero h1 { font-size: 2.2rem; }
@@ -304,15 +328,26 @@
     text-decoration: none;
     font-weight: 500;
   }
+  /* Scroll fade effect */
+.scrolled {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: all 0.8s ease-out;
+}
+.hero-content, .about-box, .project-card, .service-box-modern, .social-links a {
+    opacity: 0;
+    transform: translateY(40px);
+}
+
   /* ===== GLOBAL FONT SIZE ADJUSTMENTS ===== */
 body {
   font-size: 1.25rem; /* Increases all base text size */
 }
 
 /* Headings */
-h1, .hero h1 { font-size: 3.5rem; }
-h2, .section-title { font-size: 3rem; }
-h3, h4, h5 { font-size: 1.75rem; }
+h1, .hero h1 { font-size: 3rem; }
+h2, .section-title { font-size: 2.5rem; }
+h3, h4, h5 { font-size: 1.5rem; }
 
 /* Paragraphs and text */
 p, li, a, strong, .lead {
@@ -328,38 +363,38 @@ p, li, a, strong, .lead {
 
 /* About box content */
 .about-box h5 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
 .about-box p, .about-box ul li {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 /* Portfolio cards */
 .card-title {
-  font-size: 1.4rem;
+  font-size: 1rem;
 }
 
 /* Services section */
 .service-box h5 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .service-box p {
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 
 /* Footer */
 footer {
-  font-size: 1.15rem;
+  font-size: 1rem;
 }
 
 </style>
-
-</head>
 <body>
 
-<!-- Hero Section -->
 <section class="hero">
+  <!-- Favicon on top-left -->
+  <img src="{{ asset('favicon.png') }}" alt="Logo" class="hero-logo">
+
   <video autoplay muted loop playsinline class="hero-video">
     <source src="{{ asset('background.mp4') }}" onerror="this.src='{{ asset('storage/background.mp4') }}'" type="video/mp4">
     Your browser does not support the video tag.
@@ -374,6 +409,7 @@ footer {
     <a href="#contact" class="btn btn-warning">Contact Me</a>
   </div>
 </section>
+
 
 <!-- About Section -->
 <section id="about" class="py-5" style="background-color: #007FFF; color: #fff;">
@@ -596,7 +632,7 @@ footer {
 <!-- Footer -->
 <footer class="footer text-center py-3" style="background: #0d1b2a; color: #ffffff; font-size: 15px;">
   <p class="mb-1">
-    © 2025 <span style="color: #4dabf7; font-weight: 600;">Developed by Muhammad Azam</span> — All Rights Reserved
+    © 2025 <span style="color: #4dabf7; font-weight: 600;">Developed By Azam</span> — All Rights Reserved
   </p>
   <p class="mb-0">
     <a href="mailto:azam07316@gmail.com" style="color: #90e0ef; text-decoration: none;">
@@ -605,6 +641,86 @@ footer {
   </p>
 </footer>
 
+<script>
+// ===== HERO LOGO FLOAT =====
+const heroLogo = document.querySelector('.hero-logo');
+let logoDirection = 1;
+setInterval(() => {
+    const currentTop = parseFloat(getComputedStyle(heroLogo).top);
+    if (currentTop >= 30) logoDirection = -1;
+    if (currentTop <= 20) logoDirection = 1;
+    heroLogo.style.top = (currentTop + 0.3 * logoDirection) + 'px';
+}, 30);
+
+// ===== PROFILE IMAGE PULSE =====
+const heroImg = document.querySelector('.hero-img');
+let scaleUp = true;
+setInterval(() => {
+    const currentScale = parseFloat(heroImg.style.transform.replace(/[^0-9\.]/g, '')) || 1;
+    if (currentScale >= 1.05) scaleUp = false;
+    if (currentScale <= 1) scaleUp = true;
+    heroImg.style.transform = `scale(${(currentScale + (scaleUp ? 0.001 : -0.001)).toFixed(3)})`;
+}, 10);
+
+// ===== SCROLL FADE-IN ANIMATION =====
+const scrollElements = document.querySelectorAll('.hero-content, .about-box, .project-card, .service-box-modern, .social-links a');
+const elementInView = (el, offset = 100) => {
+    const elementTop = el.getBoundingClientRect().top;
+    return elementTop <= (window.innerHeight - offset);
+};
+const displayScrollElement = (el) => {
+    el.classList.add('scrolled');
+};
+const hideScrollElement = (el) => {
+    el.classList.remove('scrolled');
+};
+const handleScrollAnimation = () => {
+    scrollElements.forEach(el => {
+        if (elementInView(el, 150)) displayScrollElement(el);
+        else hideScrollElement(el);
+    });
+};
+window.addEventListener('scroll', handleScrollAnimation);
+
+// ===== HOVER EFFECTS WITH JS =====
+const portfolioCards = document.querySelectorAll('.project-card');
+portfolioCards.forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-15px) scale(1.02)';
+        card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.25)';
+    });
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+        card.style.boxShadow = '0 12px 30px rgba(0,0,0,0.15)';
+    });
+});
+
+// ===== SERVICE ICON FLOAT =====
+const serviceIcons = document.querySelectorAll('.icon-wrapper');
+serviceIcons.forEach(icon => {
+    let direction = 1;
+    setInterval(() => {
+        const currentTop = parseFloat(getComputedStyle(icon).top.replace('px','')) || 0;
+        if(currentTop >= 10) direction = -1;
+        if(currentTop <= 0) direction = 1;
+        icon.style.position = 'relative';
+        icon.style.top = (currentTop + 0.2 * direction) + 'px';
+    }, 20);
+});
+
+// ===== SOCIAL ICON HOVER =====
+const socialIcons = document.querySelectorAll('.social-links a img');
+socialIcons.forEach(icon => {
+    icon.addEventListener('mouseenter', () => {
+        icon.style.transform = 'scale(1.2) translateY(-5px) rotate(-5deg)';
+        icon.style.boxShadow = '0 15px 35px rgba(42, 82, 152, 0.35)';
+    });
+    icon.addEventListener('mouseleave', () => {
+        icon.style.transform = 'scale(1) translateY(0) rotate(0deg)';
+        icon.style.boxShadow = '0 8px 25px rgba(0,0,0,0.3)';
+    });
+});
+</script>
 
 </body>
 </html>
