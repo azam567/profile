@@ -25,7 +25,7 @@ Benefits:
 • Centralized and accessible data management.
 • Improved communication between managers and tenants.
 • Data-driven decisions for better business performance.',
-                'image' => 'Estate.png',
+                'images' => ['Estate.png', 'Q1.png', 'Q2.png', 'Q3.png', 'Q4.png', 'Q5.png', 'Q6.png', 'Q7.png', 'Q8.png', 'Q9.png',], 
             ],
 
             'eye' => [
@@ -39,8 +39,8 @@ Key Features:
 • Secure Data Handling – Role-based authentication and access control.
 
 The system enhances the workflow for doctors and administrators, reduces paperwork, and supports better patient care through digital record keeping.',
-                'image' => 'Eye.png',
-            ],
+                'images' => ['Eye.png', 'eye1.png', 'eye2.png', 'eye3.png', 'eye4.png'], 
+            ],  
 
             'quicklink' => [
                 'title' => 'Quicklink Payments',
@@ -56,7 +56,7 @@ Key Features:
 Tech Stack: Laravel, PHP, MySQL, Bootstrap, JavaScript.
 
 Goal: To provide businesses with a fast, transparent, and reliable digital payment solution.',
-                'image' => 'QLP.PNG',
+                'images' => ['QLP.PNG', 'QLP (2).PNG', 'QLP (3).PNG', 'QLP (4).PNG', 'QLP (5).PNG'], 
             ],
 
             'mazar' => [
@@ -72,7 +72,7 @@ Core Operations:
 Core Values: Integrity, Quality, Reliability, and Global Reach.
 
 Mission: To connect businesses worldwide through efficient trading, transparent communication, and innovative supply chain solutions.',
-                'image' => 'MT.PNG',
+                'images' => ['MT.PNG', 'cat1.PNG', 'cat2.PNG', 'cat3.PNG', 'cat4.PNG'],
             ],
         ];
 
