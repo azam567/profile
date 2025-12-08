@@ -25,7 +25,7 @@ Benefits:
 • Centralized and accessible data management.
 • Improved communication between managers and tenants.
 • Data-driven decisions for better business performance.',
-                'images' => ['Estate.png', 'Q1.png', 'Q2.png', 'Q3.png', 'Q4.png', 'Q5.png', 'Q6.png', 'Q7.png', 'Q8.png', 'Q9.png',], 
+                'images' => ['Estate.PNG', 'Q1.PNG', 'Q2.PNG', 'Q3.PNG', 'Q4.PNG', 'Q5.PNG', 'Q6.PNG', 'Q7.PNG', 'Q8.PNG', 'Q9.PNG',], 
             ],
 
             'eye' => [
@@ -39,7 +39,7 @@ Key Features:
 • Secure Data Handling – Role-based authentication and access control.
 
 The system enhances the workflow for doctors and administrators, reduces paperwork, and supports better patient care through digital record keeping.',
-                'images' => ['Eye.png', 'eye1.png', 'eye2.png', 'eye3.png', 'eye4.png'], 
+                'images' => ['Eye.PNG', 'eye1.PNG', 'eye2.PNG', 'eye3.PNG', 'eye4.PNG'], 
             ],  
 
             'quicklink' => [

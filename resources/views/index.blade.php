@@ -486,7 +486,7 @@ footer {
       <div class="col-md-8">
         <a href="{{ route('projects.show', 'estate') }}" class="text-decoration-none text-dark">
           <div class="card project-card border-0 shadow-lg rounded-4">
-            <img src="{{ asset('Estate.png') }}" onerror="this.src='{{ asset('storage/Estate.png') }}'" class="card-img-top" alt="Real Estate Project">
+            <img src="{{ asset('Estate.PNG') }}" onerror="this.src='{{ asset('storage/Estate.png') }}'" class="card-img-top" alt="Real Estate Project">
             <div class="card-body">
               <h5 class="card-title text-primary fw-bold">Real Estate Management</h5>
               <p class="card-text text-muted">A complete property listing and client management platform built with Laravel.</p>
@@ -499,7 +499,7 @@ footer {
       <div class="col-md-8">
         <a href="{{ route('projects.show', 'eye') }}" class="text-decoration-none text-dark">
           <div class="card project-card border-0 shadow-lg rounded-4">
-            <img src="{{ asset('Eye.png') }}" onerror="this.src='{{ asset('storage/Eye.png') }}'" class="card-img-top" alt="Eye Department Project">
+            <img src="{{ asset('Eye.PNG') }}" onerror="this.src='{{ asset('storage/Eye.png') }}'" class="card-img-top" alt="Eye Department Project">
             <div class="card-body">
               <h5 class="card-title text-primary fw-bold">Hospital Eye Department</h5>
               <p class="card-text text-muted">Developed for Mayo Hospital’s Eye Department to manage patient records efficiently.</p>
